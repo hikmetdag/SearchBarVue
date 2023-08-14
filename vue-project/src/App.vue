@@ -1,8 +1,10 @@
 <script setup>
 import userData from './clients.json'
 import { ref } from 'vue'
+//Initial value of input is null
 let input = ref('')
 function filteredList() {
+  //Frist 10 names will be initially presented, 
   if (!input.value) {
     return userData.slice(0, 10)
   }
@@ -39,6 +41,9 @@ function filteredList() {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   background-color: rgb(234, 242, 255);
   padding: 40px;
@@ -75,7 +80,6 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* margin-left: 50%; */
   overflow-y: auto;
 
   .error {
